@@ -1,0 +1,28 @@
+#include <stdio.h>
+
+int main()
+{
+    int st1,lb1,oz1,sum,st2,lb2,oz2;
+    float avg1,avg2,avg3;
+
+    printf("Input 1st weight (st,lb,oz): ");
+    scanf("%d,%d,%d",&st1,&lb1,&oz1);
+    
+    printf("Input 2nd weight (st,lb,oz): ");
+    scanf("%d,%d,%d",&st2,&lb2,&oz2);
+    
+    avg1=((st1+st2)+(lb1+lb2)/14)*0.5;
+    avg2=((lb1+lb2)%14+(oz1+oz2)/16)*0.5;
+    avg3=((oz1+oz2)%16)*0.5;
+    
+    printf("%12s%10s%10s%10s\n","","st","lb","oz");
+    printf("===================================================\n");
+    printf("%12s%10d%10d%10d\n","Weight 1",st1,lb1,oz1);
+    printf("===================================================\n");
+    printf("%12s%10d%10d%10d\n","Weight 2",st2,lb2,oz2);
+    printf("===================================================\n");
+    printf("%12s%10d%10d%10d\n","Sum",(st1+st2)+(lb1+lb2)/14,(lb1+lb2)%14+(oz1+oz2)/16,(oz1+oz2)%16);
+    printf("%12s%10.1f%10.1f%10.1f\n","Average",avg1,avg2,avg3);
+    
+    return 0;
+}
